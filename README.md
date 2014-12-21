@@ -1,12 +1,17 @@
-Simple Chat Room Web App
+Messenger Web App
 ========================
-A simple web app where users can connect to this app's server and interact with others in the chat app through the browser.
+A simple in-browser chat application example useful to anyone learning web development.
 
 ##Getting Started
 1. Install [Git](http://git-scm.com/)
-    * Required by Bower, for whatever reason...
-    * Recommended install options
-        1. In the **Select Components** section: leave as default: Windows Explorer integration, Git Bash Here, ...
+    * Recommended installation options
+        1. In the **Select Components** section:
+            * check `Windows Explorer integration`
+                * select `Simple context menu (Registry based)`
+                    * check `Git Bash Here`
+                    * check `Git GUI Here`
+            * check `Associate .git* configuration files with the default text editor`
+            * check `Associate .sh files to be run with Bash`
         2. In the **Adjusting your PATH environment** section: select `Use Git from the Windows Command Prompt`
         3. In the **Configure the line ending conversions** section: select `Checkout as-is, commit as-is`
         4. Install the damn thing
@@ -14,12 +19,13 @@ A simple web app where users can connect to this app's server and interact with 
     * This will **require** to restart your computer.
     * Node will also provide us the `npm install` command, which fetches and downloads any project dependency (chunk of code) needed to make the project work
 3. After restart, right click on the root folder for this project and select `Git Bash` to open the Git command line
-4. `npm install -g nodemon`: It is recommended that while developing the app you run the server with [nodemon](http://nodemon.io/). To do so, run this command in Git Bash: `npm install -g nodemon`
+    * Optionally, if you set up git to also run on the Windows Command Prompt, you can just open the windows command prompt on the root folder for this project. 
+4. `npm install -g nodemon`: It is recommended that while developing the app you run the server with [nodemon](http://nodemon.io/). To do so, run this command in Git Bash or in the Windows Command Prompt: `npm install -g nodemon`
     * Nodemon watches for any file change in your project and restarts your server automatically so you can quickly see the changes you made.
 5. `npm install -g bower`: [Bower](http://bower.io/) is required in order to download some additional packages required by our app
     * Bower is similar to `npm` in that it fetches and downloads dependencies as well, but provides additional packages not found in npm
     * Instead of looking in package.json for dependencies, bower looks in **bower.json**
-6. `npm install`: Git Bash should already be open to this project's root directory, so run `npm install`
+6. `npm install`: Git Bash, or any other command line window, should already be open to this project's root directory, so run `npm install`
     * This command looks at **package.json** and downloads all the dependencies listed along with executing any other command you defined.
     * A bit on [package.json](https://www.npmjs.org/doc/files/package.json.html)
         * Must be written in [.json](http://www.json.org/) format to work
@@ -41,27 +47,3 @@ A simple web app where users can connect to this app's server and interact with 
 	3. once the server is up and running, open your web browser and go to [localhost:3000](localhost:3000) if the server port number is set for port 3000.
 	    * You can open multiple windows to this address and run multiple instances of this application
 		* You can also connect to this server from any other device connected to the same local network, just replace **localhost** with the IPv4 address of the computer the server is running on.
-		
-##Making the app (this section is not complete)
-1. **server.js** is where all your server side code will live
-
-2. **index.html** is where the structure of your app will live
-    1. set up index.html as blank .html file with `<meta>`
-    2. load `<script>` and `<link>`
-
-3. **app.js** is where the app/angular config code will live
-    1. `.config()` -> `$routeProvider.when().otherwise();`
-    2. `.run()`
-
-4. **home.js** is where all your home view logic will live
-    1. `angular.module('app')`
-    2. `.controller();`
-    3. go to **app.js** and fill in the controller name for /home
-
-5. **index.css** is where your app's styling will live
-    1. set up flexbox
-
-6. **home.html** is where your home view structure code lives, use flexbox
-    1. static header (title, whatever...)
-    2. dynamic body (messages from all)
-    3. static footer (type message input, username input)
