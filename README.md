@@ -44,6 +44,6 @@ A simple in-browser chat application example useful to anyone learning web devel
     2. in the command window, execute the command `node server.js`
 	    * This will start the node server
 		* Optionally, you could run the command `nodemon server.js` which will run the server using nodemon, which is easier for development
-	3. once the server is up and running, open your web browser and go to [localhost:3000](localhost:3000) if the server port number is set for port 3000.
+	3. once the server is up and running, open your web browser and go to [localhost:3000](http://localhost:3000/) if the server port number is set for port 3000.
 	    * You can open multiple windows to this address and run multiple instances of this application
 		* You can also connect to this server from any other device connected to the same local network, just replace **localhost** with the IPv4 address of the computer the server is running on.
