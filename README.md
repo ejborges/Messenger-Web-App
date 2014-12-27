@@ -42,8 +42,10 @@ A simple in-browser chat application example useful to anyone learning web devel
     1. navigate into the server folder and open a command window from that directory
 	    * This can be done by clicking on the address bar in the File Explorer window and typing `cmd` or Shift+Right click on the server folder and click on `Open command window here`
     2. in the command window, execute the command `node server.js`
-	    * This will start the node server
-		* Optionally, you could run the command `nodemon server.js` which will run the server using nodemon, which is easier for development
-	3. once the server is up and running, open your web browser and go to [localhost:3000](http://localhost:3000/) if the server port number is set for port 3000.
-	    * You can open multiple windows to this address and run multiple instances of this application
-		* You can also connect to this server from any other device connected to the same local network, just replace **localhost** with the IPv4 address of the computer the server is running on.
+        * This will start the node server
+        * Optionally, you could run the command `nodemon server.js` which will run the server using nodemon, which is easier for development
+    3. once the server is up and running, open your web browser and go to [localhost:3000](http://localhost:3000/) if the server port number is set for port 3000.
+        * You can open multiple windows to this address and run multiple instances of this application
+        * You can also connect to this server from any other device (phones/tablets included) connected to the same local network. Just replace **localhost** with the IPv4 address of the computer the server is running on.
+8. If you are using this by yourself, open multiple browser windows, **not tabs** since it'll be annoying switching between tabs, to [localhost:3000](http://localhost:3000/) and register as different users within this app. This way, you will be able to simultaneously see the screens of both the sender and receiver (they are different). 
+    * You can do this with as many browser windows as you'd like!
