@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Messenger</title>
 
+    <!-- http://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
     <!-- IE should run in the most current mode possible and the Chrome
@@ -16,12 +17,12 @@
     <!-- Application CSS -->
     <link rel="stylesheet" href="index.css"/>
     <link rel="stylesheet" href="flexbox.css"/>
-    <link rel="stylesheet" href="views/home/home.css"/>
+    <link rel="stylesheet" href="views/messenger/messenger.css"/>
 </head>
 <body>
     <div ng-app="app">
-        <div class="fill-viewport" ng-view> <!-- add class="" attribute after done with flex in index.css -->
-            <!-- angular will inject everything in home.html here -->
+        <div class="fill-viewport" ng-view>
+            <!-- AngularJS will inject a view's .html here -->
         </div>
     </div>
 
@@ -35,6 +36,6 @@
 
     <!-- Application scripts -->
     <script src="app.js"></script>
-    <script src="views/home/home.js"></script>
+    <script src="views/messenger/messenger.js"></script>
 </body>
 </html>

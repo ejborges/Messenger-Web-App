@@ -5,5 +5,52 @@ body {
     font-size: 12px;
 }
 
+/* Override Bootstrap's <pre> element styling */
+pre {
+    padding: inherit;
+    margin: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    word-break: inherit;
+    word-wrap: inherit;
+    background-color: inherit;
+    border: none;
+    border-radius: 0;
+    overflow: inherit;
+}
+
+.go-to-tutorial-btn {
+    padding: 1em;
+    background: #446CB3;
+    color: #ffffff;
+    border: 1px solid rgba(0,0,0,0.33);
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.5);
+    cursor: pointer;
+
+    text-align: center;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.go-to-tutorial-btn:hover {
+    background: #385994;
+}
+
+.go-to-tutorial-btn-title {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.go-to-tutorial-btn-body {
+    display: block;
+}
+
 
 

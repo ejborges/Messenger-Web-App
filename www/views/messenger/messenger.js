@@ -1,7 +1,7 @@
-angular.module('app') // this is how you load the module instead of creating a new module
+angular.module('app')
 
 .controller(
-    'homeCtrl',
+    'messengerCtrl',
     [
         '$rootScope',
         '$scope',
@@ -16,12 +16,18 @@ angular.module('app') // this is how you load the module instead of creating a n
                     //{
                     //    id: 1417409398091,        <-- example message object
                     //    user: "John Doe",
+                    //    color: '#22A7F0',
                     //    msg: "Hello World!"
                     //}
                 ],
                 messageClass: function(username) {
                     if(username === $scope.user.username) return "my-message";
                     else return "their-message";
+                },
+                messageStyle: function(type, username, color) {
+                    if(type == 0 && username === $scope.user.username) return {};
+                    else if(type == 1 && username === $scope.user.username) return {background: color};
+                    else return {background: color};
                 },
                 getDate: function(unixTimestamp) {
                     return new Date(unixTimestamp).toLocaleString();
@@ -32,13 +38,13 @@ angular.module('app') // this is how you load the module instead of creating a n
             $scope.user = {
                 registered: false,
                 username: "",
-
+                color: "",
                 message: ""
             };
 
             var newID = function() {
-                return new Date().getTime(); // Returns the number of milliseconds since midnight Jan 1, 1970; unix timestamp
-            },
+                    return new Date().getTime(); // Returns the number of milliseconds since midnight Jan 1, 1970; unix timestamp
+                },
                 viewportBody = document.getElementById('viewport-body'),
                 newMsg;
 
@@ -52,6 +58,7 @@ angular.module('app') // this is how you load the module instead of creating a n
             socket.on('new user reply', function(packet) {
                 if(packet.success) {
                     $scope.user.registered = true;
+                    $scope.user.color = packet.color;
                     $rootScope.app.messages = packet.messages;
                 }
                 else {
@@ -79,6 +86,7 @@ angular.module('app') // this is how you load the module instead of creating a n
                     newMsg = {
                         id: newID(),
                         user: $scope.user.username,
+                        color: $scope.user.color,
                         msg: $scope.user.message
                     };
                     $rootScope.app.messages.push(newMsg);
@@ -101,7 +109,8 @@ angular.module('app') // this is how you load the module instead of creating a n
 
 
             socket.on('get users reply', function(users) {
-                $rootScope.app.messages.push({id: newID(), user: '$server', msg: 'users: ' + JSON.stringify(users, null, 4)});
+                $rootScope.app.messages.push({id: newID(), user: '$erver', color: 'linear-gradient(180deg, rgba(44,62,80,0.75), #22313F)',
+                    msg: 'users: ' + JSON.stringify(users, null, 4)});
                 $timeout(function(){
                     viewportBody.scrollTop = viewportBody.scrollHeight;
                 },10);

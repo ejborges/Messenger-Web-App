@@ -5,13 +5,18 @@ angular.module('app', ['ngRoute', 'socket-io'])
         '$routeProvider',
         function($routeProvider) {
             $routeProvider.when(
-                '/home',
+                '/messenger',
                 {
-                    templateUrl: 'views/home/home.html',
-                    controller: 'homeCtrl' // dont fill this in until done setting up controller
+                    templateUrl: 'views/messenger/messenger.html',
+                    controller: 'messengerCtrl'
                 }
-// can have many more routes
-            ).otherwise({redirectTo: '/home'});
+            ).when(
+                '/tutorial',
+                {
+                    templateUrl: 'views/tutorial/tutorial.html',
+                    controller: 'tutorialCtrl'
+                }
+            ).otherwise({redirectTo: '/messenger'});
         }
     ]
 )
@@ -19,10 +24,16 @@ angular.module('app', ['ngRoute', 'socket-io'])
     .run(
     [
         '$rootScope',
-        function($rootScope) {
-// do something once app is done loading
-// similar to main() method in Java
+        '$location',
+        function($rootScope, $location) {
 
+            $rootScope.goTo = function(path) {
+                $location.path(path);
+            };
+
+            // Popovers are an opt-in functionality in the Bootstrap version we are using
+            // http://getbootstrap.com/javascript/#popovers
+            // This function only needs to run once.
             $(function () {
                 $('[data-toggle="popover"]').popover()
             });
